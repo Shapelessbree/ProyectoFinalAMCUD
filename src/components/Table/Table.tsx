@@ -15,7 +15,7 @@ export const Table = ({
 }: TableProps) => {
   return (
     <div className="w-full h-full">
-      <table className="table-auto text-start w-full h-full text-red-400 mx-4">
+      <table className="table-auto text-start w-full h-full text-red-300 mx-4">
         <TableHeaders headers={headers!} />
         <TableBody>{children}</TableBody>
       </table>

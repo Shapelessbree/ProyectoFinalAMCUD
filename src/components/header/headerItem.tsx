@@ -27,14 +27,14 @@ export const HeaderItem: React.FC<Props> = ({
   return (
     <Link
       className={`flex items-center h-8 px-12 ${isActiveItem(path)
-        ? "bg-light-blue bg-red-400"
+        ? "bg-gray bg-red-400"
         : "bg-transparent bg-red-400"
       }`}
       href={path}
-      style={{ borderRadius: "0.375rem" }} // Ajusta el radio de borde según tu preferencia
+      style={{ borderRadius: "0.5rem" }} // Ajusta el radio de borde según tu preferencia
     >
       <div className="flex items-center gap-2">
-        <span className="text-sm font-medium">
+        <span className="text-m font-medium">
           {title}
         </span>
       </div>

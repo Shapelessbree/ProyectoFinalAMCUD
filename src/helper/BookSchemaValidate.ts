@@ -15,18 +15,24 @@ const shortText = yup
   .string()
   .typeError("*Must be a text")
   .min(10, "*Minimum of 10 characters")
-  .max(50, "*Maximum of 100 characters");
+  .max(60, "*Maximum of 60 characters");
 
 const longText = yup
   .string()
   .typeError("*Must be a text")
+  .min(100, "*Minimum of 100 characters")
+  .max(2000, "*Maximum of 2000 characters");
+
+  const midText = yup
+  .string()
+  .typeError("*Must be a text")
   .min(50, "*Minimum of 50 characters")
-  .max(500, "*Maximum of 100 characters");
+  .max(300, "*Maximum of 300 characters");
 
 export const createBookSchema = yup.object<Book>().shape({
   id: requiredNumber,
-  title: requiredString,
-  description: longText,
+  title: shortText,
+  description: midText,
   pageCount: requiredNumber,
   excerpt: longText,
   publishDate: requiredString,

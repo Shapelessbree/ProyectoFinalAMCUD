@@ -73,7 +73,7 @@ module.exports = {
         "warning-light": "#FCF5CB",
         "warning-dark": "#866404",
 
-        //Camila colors
+        //colors
         "text-dark": "#18181A",
         "dark-red": "#ED0022",
         "background-gray": "#F6F7F9",

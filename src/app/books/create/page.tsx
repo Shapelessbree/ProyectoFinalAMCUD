@@ -5,7 +5,7 @@ import React, { useState } from 'react'; // Importa useState
 import axios from 'axios'; // Importa axios
 import { Book } from '@/types/book';
 import { Button } from '@/components/Button';
-import { NumberInput, ShortTextInput, DateInput } from '@/components/Inputs';
+import { NumberInput, ShortTextInput, DateInput, LongTextInput, MidTextInput} from '@/components/Inputs';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { createBookSchema } from '@/helper/BookSchemaValidate';
 
@@ -41,11 +41,11 @@ export default function CreateBook() {
                         <div className='grid grid-cols-2 gap-5'>
                             <div className='flex flex-col gap-3'>
                                 <ShortTextInput name="title" title={<span className="text-red-400">Title</span>} />
-                                <ShortTextInput name="description" title={<span className="text-red-400">Description</span>} />
+                                <LongTextInput name="description" title={<span className="text-red-400">Description</span>} />
                                 <NumberInput name="pageCount" title={<span className="text-red-400">Page Count</span>} />
                             </div>
                             <div className='flex flex-col gap-3'>
-                                <ShortTextInput name="excerpt" title={<span className="text-red-400">Excerpt</span>} />
+                                <LongTextInput name="excerpt" title={<span className="text-red-400">Excerpt</span>} />
                                 <DateInput name="publishDate" title={<span className="text-red-400">Publish Date</span>} />
                             </div>
                         </div>

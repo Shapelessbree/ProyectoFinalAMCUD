@@ -13,7 +13,7 @@ export const MainLayout = ({
   paddingTop,
 }: MainLayoutProps) => {
   return (
-    <main className="flex flex-col h-screen overflow-hidden bg-background-blue rounded-2xl">
+    <main className="flex flex-col h-screen overflow-hidden bg-background-red rounded-2xl">
       <Header />
       <div className={`flex flex-col w-full h-full ${paddingTop ? paddingTop : "pt-10"}`}>
         <div className="overflow-auto w-full h-full px-10 pb-8">

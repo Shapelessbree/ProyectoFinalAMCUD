@@ -5,9 +5,11 @@ import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import React, { useEffect, useState } from 'react';
 import { Book } from '@/types/book';
 import { Button } from '@/components/Button';
-import { NumberInput, ShortTextInput, DateInput } from '@/components/Inputs';
+import { NumberInput, ShortTextInput, DateInput, LongTextInput } from '@/components/Inputs';
 import { useRouter, useParams } from 'next/navigation';
 import { getBookById, updateBookById } from '@/services/books';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { createBookSchema } from '@/helper/BookSchemaValidate';
 
 const formatDate = (dateString: string): string => {
   const date = new Date(dateString);
@@ -19,8 +21,8 @@ const formatDate = (dateString: string): string => {
 
 export default function EditBook() {
   const methods = useForm<Book>({
-    // Add resolver if you have a validation schema
-    // resolver: yupResolver(createBookSchema),
+  
+  resolver: yupResolver(createBookSchema),
   });
   const { handleSubmit, reset } = methods;
   const router = useRouter();
@@ -77,11 +79,11 @@ export default function EditBook() {
                         <div className='grid grid-cols-2 gap-5'>
                             <div className='flex flex-col gap-4'>
                                 <ShortTextInput name="title" title={<span className="text-red-400">Title</span>} />
-                                <ShortTextInput name="description" title={<span className="text-red-400">Description</span>} />
+                                <LongTextInput name="description" title={<span className="text-red-400">Description</span>} />
                                 <NumberInput name="pageCount" title={<span className="text-red-400">Page Count</span>} />
                             </div>
                             <div className='flex flex-col gap-3'>
-                                <ShortTextInput name="excerpt" title={<span className="text-red-400">Excerpt</span>} />
+                                <LongTextInput name="excerpt" title={<span className="text-red-400">Excerpt</span>} />
                                 <DateInput name="publishDate" title={<span className="text-red-400">Publish Date</span>} />
                             </div>
                         </div>

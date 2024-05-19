@@ -6,7 +6,7 @@ import { Url } from "next/dist/shared/lib/router/router";
 import { variants } from "@/utils/index";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-3 rounded-[35px] text-sm font-bold transition-colors focus:outline-none disabled:bg-dark-gray disabled:text-gray-text disabled:pointer-events-none duration-200",
+  "inline-flex items-center justify-center gap-3 rounded-[45px] text-sm font-bold transition-colors focus:outline-none disabled:bg-dark-gray disabled:text-gray-text disabled:pointer-events-none duration-200",
   {
     variants: {
       variant: {
@@ -14,7 +14,7 @@ const buttonVariants = cva(
         blue: "bg-medium-blue text-white hover:bg-red-300",
         purple: "bg-dark-purple text-white hover:bg-indigo-700",
         darkBlue: 'bg-dark-blue text-white hover:bg-red-300',
-        pink: "bg-red-400 text-white hover:bg-red-400"
+        pink: "bg-red-400 text-white hover:bg-red-600"
       },
 
       size: {
